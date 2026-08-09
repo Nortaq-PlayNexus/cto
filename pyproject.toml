@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "cto-dashboard"
+version = "1.0.0"
+description = "Engineering leadership dashboard — repo health, team metrics, and tech stack oversight for GitHub organizations."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "PlayNexus" }
+]
+keywords = ["github", "dashboard", "cto", "engineering", "metrics", "health"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: System :: Monitoring",
+]
+dependencies = [
+    "requests>=2.31.0",
+    "rich>=13.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+cto = "cto_dashboard.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/Nortaq-PlayNexus/cto"
+Repository = "https://github.com/Nortaq-PlayNexus/cto"
+Issues = "https://github.com/Nortaq-PlayNexus/cto/issues"
+
+[tool.setuptools.packages.find]
+include = ["cto_dashboard*"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

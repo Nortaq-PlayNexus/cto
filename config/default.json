@@ -1,0 +1,17 @@
+{
+  "default_org": "Nortaq-PlayNexus",
+  "github_token": null,
+  "health_weights": {
+    "has_readme": 10,
+    "has_license": 8,
+    "has_description": 5,
+    "has_topics": 4,
+    "has_ci": 15,
+    "recent_activity": 15,
+    "low_open_issues": 10,
+    "has_contributing": 5,
+    "has_security_policy": 4,
+    "has_changelog": 3,
+    "has_docker": 3
+  }
+}

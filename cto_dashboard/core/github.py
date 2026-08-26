@@ -1,8 +1,9 @@
 """GitHub API client for fetching repository and organization data."""
 
-import requests
-from datetime import datetime, timezone
+from datetime import datetime
 from typing import Any
+
+import requests
 
 
 class GitHubClient:

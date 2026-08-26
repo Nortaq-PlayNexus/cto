@@ -1,8 +1,10 @@
 import importlib
 import pkgutil
+
 import pytest
 
 import cto_dashboard
+
 
 def test_package_importable():
     assert cto_dashboard is not None

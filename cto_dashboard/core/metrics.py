@@ -1,7 +1,7 @@
 """Team metrics and tech stack analysis."""
 
-from datetime import datetime, timezone, timedelta
 from collections import defaultdict
+from datetime import datetime, timedelta, timezone
 
 from cto_dashboard.core.github import GitHubClient
 

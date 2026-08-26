@@ -67,7 +67,7 @@ class HealthScorer:
         return scored
 
     def _check_file_exists(self, repo: dict, filename: str) -> int:
-        default_branch = repo.get("default_branch", "main")
+        repo.get("default_branch", "main")
         check_names = {
             "readme": ["README.md", "readme.md", "README.rst", "README"],
             "contributing": ["CONTRIBUTING.md", "contributing.md"],

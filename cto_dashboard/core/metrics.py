@@ -32,12 +32,14 @@ class MetricsCollector:
 
         contributors = []
         for login, count in sorted(contributor_commits.items(), key=lambda x: -x[1]):
-            contributors.append({
-                "login": login,
-                "commits": count,
-                "repos": list(contributor_repos[login]),
-                "repo_count": len(contributor_repos[login]),
-            })
+            contributors.append(
+                {
+                    "login": login,
+                    "commits": count,
+                    "repos": list(contributor_repos[login]),
+                    "repo_count": len(contributor_repos[login]),
+                }
+            )
 
         return {
             "period_days": days,
@@ -64,11 +66,13 @@ class MetricsCollector:
         total_bytes = sum(language_bytes.values()) or 1
         languages = []
         for lang, bytes_count in sorted(language_bytes.items(), key=lambda x: -x[1]):
-            languages.append({
-                "name": lang,
-                "bytes": bytes_count,
-                "percentage": round((bytes_count / total_bytes) * 100, 1),
-            })
+            languages.append(
+                {
+                    "name": lang,
+                    "bytes": bytes_count,
+                    "percentage": round((bytes_count / total_bytes) * 100, 1),
+                }
+            )
 
         topics = sorted(all_topics.items(), key=lambda x: -x[1])
 
@@ -88,17 +92,26 @@ class MetricsCollector:
                 continue
             pushed = repo.get("pushed_at")
             if not pushed:
-                stale.append({"name": repo["name"], "last_push": "never", "days_stale": -1, "url": repo.get("html_url", "")})
+                stale.append(
+                    {
+                        "name": repo["name"],
+                        "last_push": "never",
+                        "days_stale": -1,
+                        "url": repo.get("html_url", ""),
+                    }
+                )
                 continue
             try:
                 last = datetime.fromisoformat(pushed.replace("Z", "+00:00"))
                 if last < threshold:
-                    stale.append({
-                        "name": repo["name"],
-                        "last_push": pushed,
-                        "days_stale": (datetime.now(timezone.utc) - last).days,
-                        "url": repo.get("html_url", ""),
-                    })
+                    stale.append(
+                        {
+                            "name": repo["name"],
+                            "last_push": pushed,
+                            "days_stale": (datetime.now(timezone.utc) - last).days,
+                            "url": repo.get("html_url", ""),
+                        }
+                    )
             except (ValueError, TypeError):
                 continue
 

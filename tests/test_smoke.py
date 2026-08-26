@@ -9,6 +9,7 @@ import cto_dashboard
 def test_package_importable():
     assert cto_dashboard is not None
 
+
 def test_import_all_submodules():
     errors = []
     for mod in pkgutil.walk_packages(cto_dashboard.__path__, cto_dashboard.__name__ + "."):

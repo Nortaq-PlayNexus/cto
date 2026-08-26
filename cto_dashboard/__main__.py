@@ -22,7 +22,9 @@ def build_parser() -> argparse.ArgumentParser:
 
     overview = sub.add_parser("overview", help="Organization overview with health scores")
     overview.add_argument("--org", type=str, help="GitHub organization (overrides config)")
-    overview.add_argument("--format", choices=["table", "json"], default="table", help="Output format")
+    overview.add_argument(
+        "--format", choices=["table", "json"], default="table", help="Output format"
+    )
 
     repo = sub.add_parser("repo", help="Deep-dive into a single repository")
     repo.add_argument("name", type=str, help="Repository name")
@@ -37,11 +39,15 @@ def build_parser() -> argparse.ArgumentParser:
 
     health = sub.add_parser("health", help="Detailed health report for all repos")
     health.add_argument("--org", type=str, help="GitHub organization (overrides config)")
-    health.add_argument("--min-score", type=int, default=0, help="Only show repos below this score (0-100)")
+    health.add_argument(
+        "--min-score", type=int, default=0, help="Only show repos below this score (0-100)"
+    )
 
     stale = sub.add_parser("stale", help="Find repos with no recent activity")
     stale.add_argument("--org", type=str, help="GitHub organization (overrides config)")
-    stale.add_argument("--days", type=int, default=90, help="Inactivity threshold in days (default: 90)")
+    stale.add_argument(
+        "--days", type=int, default=90, help="Inactivity threshold in days (default: 90)"
+    )
 
     return parser
 
@@ -96,7 +102,9 @@ def main() -> int:
     elif args.command == "health":
         repos = client.list_repos()
         scored = scorer.score_repos(repos)
-        filtered = [r for r in scored if r["health_score"] < args.min_score] if args.min_score else scored
+        filtered = (
+            [r for r in scored if r["health_score"] < args.min_score] if args.min_score else scored
+        )
         dashboard.print_health_report(org, filtered)
 
     elif args.command == "stale":

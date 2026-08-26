@@ -106,7 +106,9 @@ class Dashboard:
         console.print(Panel(summary, title="Health Summary", border_style="blue"))
         console.print()
 
-    def print_repo_detail(self, repo: dict, health: dict, contributors: list[dict], languages: dict[str, int]):
+    def print_repo_detail(
+        self, repo: dict, health: dict, contributors: list[dict], languages: dict[str, int]
+    ):
         console.print()
         console.print(
             Panel(
@@ -152,7 +154,11 @@ class Dashboard:
             ctable.add_column("Commits (last 100)", justify="right")
             ctable.add_column("Repos", justify="right")
             for c in contributors[:10]:
-                ctable.add_row(c["login"], str(c.get("total_commits", c.get("contributions", 0))), str(c.get("repo_count", 1)))
+                ctable.add_row(
+                    c["login"],
+                    str(c.get("total_commits", c.get("contributions", 0))),
+                    str(c.get("repo_count", 1)),
+                )
             console.print(ctable)
 
         if languages:

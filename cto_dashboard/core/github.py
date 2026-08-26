@@ -12,10 +12,12 @@ class GitHubClient:
     def __init__(self, org: str, token: str | None = None):
         self.org = org
         self.session = requests.Session()
-        self.session.headers.update({
-            "Accept": "application/vnd.github+json",
-            "X-GitHub-Api-Version": "2022-11-28",
-        })
+        self.session.headers.update(
+            {
+                "Accept": "application/vnd.github+json",
+                "X-GitHub-Api-Version": "2022-11-28",
+            }
+        )
         if token:
             self.session.headers["Authorization"] = f"Bearer {token}"
 
@@ -61,7 +63,9 @@ class GitHubClient:
         except requests.HTTPError:
             return {}
 
-    def get_repo_commits(self, name: str, since: datetime | None = None, per_page: int = 100) -> list[dict]:
+    def get_repo_commits(
+        self, name: str, since: datetime | None = None, per_page: int = 100
+    ) -> list[dict]:
         params: dict[str, Any] = {"per_page": per_page}
         if since:
             params["since"] = since.isoformat()

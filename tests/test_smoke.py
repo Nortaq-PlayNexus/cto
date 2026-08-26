@@ -1,11 +1,18 @@
+import importlib
+import pkgutil
 import pytest
 
-try:
-    import cto_dashboard
-except ImportError:
-    cto_dashboard = None
+import cto_dashboard
 
 def test_package_importable():
-    if cto_dashboard is None:
-        pytest.skip("cto_dashboard requires optional dependencies not installed")
     assert cto_dashboard is not None
+
+def test_import_all_submodules():
+    errors = []
+    for mod in pkgutil.walk_packages(cto_dashboard.__path__, cto_dashboard.__name__ + "."):
+        try:
+            importlib.import_module(mod.name)
+        except Exception as exc:
+            errors.append(f"{mod.name}: {exc}")
+    if errors:
+        pytest.fail("Submodule import failures:\n" + "\n".join(errors))

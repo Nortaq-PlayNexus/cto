@@ -10,6 +10,8 @@
 
 </div>
 
+---
+
 **CTO Dashboard** is a CLI tool that gives engineering leaders a real-time view into their GitHub organization. It scores repository health, tracks contributor activity, maps the tech stack, and flags stale projects — all from the terminal.
 
 No SaaS. No dashboards to deploy. Just run `cto overview`.
@@ -49,6 +51,14 @@ Repos are ranked worst-first so you know where to focus.
 - Finds repos with no commits in N days (default: 90)
 - Excludes archived repos automatically
 - Sorted by inactivity duration
+
+---
+
+## Screenshots
+
+| Preview | Description |
+|---------|-------------|
+| Terminal output screenshots coming soon | |
 
 ---
 
@@ -179,6 +189,16 @@ Scores map to labels: **HEALTHY** (80+), **FAIR** (60–79), **AT RISK** (40–5
 - `requests` — GitHub API calls
 - `rich` — Terminal UI rendering
 - GitHub account (token optional but recommended)
+
+---
+
+## Contributing
+
+We welcome contributions! Please see:
+
+- [Contributing Guide](CONTRIBUTING.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Security Policy](SECURITY.md)
 
 ---
 

@@ -1,16 +1,31 @@
-<div align="center">
+<p align="center">
+  <img src="https://img.shields.io/badge/CTO-LEADERSHIP%20DASHBOARD-B8FF1E?style=flat-square&labelColor=0a0e1a" alt="cto" />
+</p>
 
-# CTO Dashboard
+# CTO :: ENGINEERING LEADERSHIP DASHBOARD
 
-**Engineering leadership visibility for GitHub organizations — repo health, team metrics, and tech stack oversight.**
+**Engineering leadership visibility for GitHub organizations — repo health, team metrics, and tech stack oversight, right from your terminal.**
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/Python-%3E%3D3.10-3776AB?logo=python&logoColor=white)](https://python.org)
-[![Rich](https://img.shields.io/badge/Rich-13+-E91E63?logo=rich&logoColor=white)](https://github.com/Textualize/rich)
+<p align="center">
+  <img src="https://img.shields.io/badge/PYTHON-%3E%3D3.10-ffc430?style=flat-square&logo=python&logoColor=ffc430&labelColor=0a0e1a" alt="python"/>
+  <img src="https://img.shields.io/badge/HEALTH-15%20CHECKS-00E5FF?style=flat-square&labelColor=0a0e1a" alt="health"/>
+  <img src="https://img.shields.io/badge/TEAMS-METRICS-3dd5ff?style=flat-square&labelColor=0a0e1a" alt="teams"/>
+  <img src="https://img.shields.io/badge/RICH-TERMINAL%20UI-B8FF1E?style=flat-square&labelColor=0a0e1a" alt="rich"/>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/LICENSE-MIT-ff3b3b?style=flat-square&labelColor=0a0e1a" alt="license"/></a>
+</p>
 
-</div>
+<pre>
+IDENT ......... CTO-01
+CLASS ......... ENGINEERING LEADERSHIP DASHBOARD
+STATUS ........ ONLINE / ACTIVE
+SCOPE ......... REPO HEALTH + TEAM METRICS + STACK
+INTERFACE ..... CLI / TERMINAL
+LINK .......... /cto
+</pre>
 
 ---
+
+## // 01 :: SIGNAL
 
 **CTO Dashboard** is a CLI tool that gives engineering leaders a real-time view into their GitHub organization. It scores repository health, tracks contributor activity, maps the tech stack, and flags stale projects — all from the terminal.
 
